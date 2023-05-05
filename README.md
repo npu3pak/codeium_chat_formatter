@@ -1,16 +1,14 @@
 # codium_chat_formatter
 
-A new Flutter project.
+A formatter for codeium chat.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Run the formatter.
+2. Open the Codeium chat.
+3. Press Ctrl+A and Ctrl+C
+4. Paste the chat into the left panel of the formatter.
+5. Specify the user name as it displayed in the chat.
+6. Press the process button
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="assets/preview.png" alt="Preview" />
