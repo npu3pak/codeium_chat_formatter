@@ -1,4 +1,4 @@
-# codium_chat_formatter
+# codeium_chat_formatter
 
 A formatter for codeium chat.
 

@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "codium_chat_formatter" "\0"
+            VALUE "FileDescription", "codeium_chat_formatter" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "codium_chat_formatter" "\0"
+            VALUE "InternalName", "codeium_chat_formatter" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "codium_chat_formatter.exe" "\0"
-            VALUE "ProductName", "codium_chat_formatter" "\0"
+            VALUE "OriginalFilename", "codeium_chat_formatter.exe" "\0"
+            VALUE "ProductName", "codeium_chat_formatter" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.codium_chat_formatter">
+    package="com.example.codeium_chat_formatter">
    <application
-        android:label="codium_chat_formatter"
+        android:label="codeium_chat_formatter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

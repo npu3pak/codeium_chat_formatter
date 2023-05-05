@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:codium_chat_formatter/chat_processor.dart';
+import 'package:codeium_chat_formatter/chat_processor.dart';
 
 void main() {
   runApp(const MyApp());

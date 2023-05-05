@@ -1,4 +1,4 @@
-import 'package:codium_chat_formatter/chat_message.dart';
+import 'package:codeium_chat_formatter/chat_message.dart';
 
 class ChatParser {
   final String userName;

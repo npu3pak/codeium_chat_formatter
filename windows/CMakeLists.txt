@@ -1,10 +1,10 @@
 # Project-level configuration.
 cmake_minimum_required(VERSION 3.14)
-project(codium_chat_formatter LANGUAGES CXX)
+project(codeium_chat_formatter LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
-set(BINARY_NAME "codium_chat_formatter")
+set(BINARY_NAME "codeium_chat_formatter")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.

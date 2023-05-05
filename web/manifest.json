@@ -1,6 +1,6 @@
 {
-    "name": "codium_chat_formatter",
-    "short_name": "codium_chat_formatter",
+    "name": "codeium_chat_formatter",
+    "short_name": "codeium_chat_formatter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
