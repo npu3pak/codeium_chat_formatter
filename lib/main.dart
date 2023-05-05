@@ -1,20 +1,24 @@
-import 'package:codium_chat_formatter/chat_processor.dart';
 import 'package:flutter/material.dart';
+import 'package:codium_chat_formatter/chat_processor.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  TextEditingController inputTextController = TextEditingController();
-  TextEditingController outputTextController = TextEditingController();
+  final TextEditingController inputTextController = TextEditingController();
+  final TextEditingController outputTextController = TextEditingController();
+  final TextEditingController userController =
+      TextEditingController(text: 'ES');
+  final TextEditingController botController =
+      TextEditingController(text: 'avatar');
 
   @override
   Widget build(BuildContext context) {
@@ -30,18 +34,26 @@ class _MyAppState extends State<MyApp> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.max,
             children: [
-              buildConvertButton(),
+              Row(
+                children: [
+                  Expanded(child: buildUserTextField()),
+                  const SizedBox(width: 16),
+                  Expanded(child: buildBotTextField()),
+                ],
+              ),
               const SizedBox(height: 16),
               Expanded(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Expanded(child: buildInputTextField()),
+                    buildInputTextField(),
                     const SizedBox(width: 16),
-                    Expanded(child: buildOutputTextField()),
+                    buildOutputTextField(),
                   ],
                 ),
               ),
+              const SizedBox(height: 16),
+              buildConvertButton(),
             ],
           ),
         ),
@@ -49,25 +61,49 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  Widget buildInputTextField() {
+  Widget buildUserTextField() {
     return TextField(
-      controller: inputTextController,
+      controller: userController,
       decoration: const InputDecoration(
         border: OutlineInputBorder(),
-        labelText: 'Исходный текст',
+        labelText: 'Имя пользователя',
       ),
-      maxLines: null,
+    );
+  }
+
+  Widget buildBotTextField() {
+    return TextField(
+      controller: botController,
+      decoration: const InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: 'Имя бота',
+      ),
+    );
+  }
+
+  Widget buildInputTextField() {
+    return Expanded(
+      child: TextField(
+        controller: inputTextController,
+        decoration: const InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: 'Исходный текст',
+        ),
+        maxLines: null,
+      ),
     );
   }
 
   Widget buildOutputTextField() {
-    return TextField(
-      controller: outputTextController,
-      decoration: const InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: 'Преобразованный текст',
+    return Expanded(
+      child: TextField(
+        controller: outputTextController,
+        decoration: const InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: 'Преобразованный текст',
+        ),
+        maxLines: null,
       ),
-      maxLines: null,
     );
   }
 
@@ -80,7 +116,10 @@ class _MyAppState extends State<MyApp> {
 
   void handleConvertButtonPress() {
     final chatText = inputTextController.text;
-    final processed = ChatProcessor().processChat(chatText);
+    final user = userController.text;
+    final bot = botController.text;
+    final processed =
+        ChatProcessor(userName: user, botName: bot).processChat(chatText);
     outputTextController.text = processed;
   }
 }
